@@ -1,0 +1,51 @@
+Inputs to portfolio pricer
+
+1. Current equity prices 
+2. Current spot (underlying) prices for options 
+3. Current implied vol for each option
+4,5,6. Current zero curves for USD, CAD, EUR 
+7. The time structure of each curve from (4) (domain of map from time to curve)
+8,9. Current FXUSDCAD and FXEURCAD rates 
+10. Current Credit Quality (i.e. rating from S&P) of each firm 
+11. Constant spread curves (as a function of credit quality and time structure)
+
+Example Inputs :
+
+Arg 1: (Current Equity Prices):                                   [152.660000000000	83.3700000000000	155.350000000000]
+Arg 2: (Current spot (underlying) prices for options):            [53.9200000000000	148.645000000000	50.0650000000000]
+Arg 3: (Implied vol ):                                            [0.234010000000000  0.237249679579589  0.172410000000000] 
+Arg 4: Zero Curve for USD :                                       1 * 15 Matrix of current interest rates
+Arg 5: Zero Curve for CAD :                                       1 * 15 Matrix of current interest rates 
+Arg 6: Zero Curve for EUR :                                       1 * 15 Matrix of current interest rates 
+Arg 7: Time strucuture used for rates (Constant for all countries)1 * 15 Matrix of current interest rates 
+Arg 8: Current FXUSDCAD                                           1 * 1 Matrix 
+Arg 9: Current FXEURCAD                                           1 * 1 Matrix 
+Arg 10: Current Credit Quality (i.e. rating from S&P) of each firm : There are 21 firms, i.e. [4 4	6	4	4	4	4	3	4	4	3	5	1	1	4	2	3	3	3	2	3]
+
+Note: For Arg 10, the order of the firms is listed "Risk Management Project\Code\portfolio_data (CR).xlsm" under the "Credit Risk" tab in the top left 
+
+For your reference, the firm order in argument 8 is: 
+
+BCECN
+DT
+NFLX
+SJRCN
+TCN
+VIA
+VZ
+AXP
+BAC
+C
+JPM
+BRAZIL
+BRCOL
+FARMCR
+ITALY
+MP
+NBRNS
+ONT
+Q
+IBM
+QHEL
+
+Arg 11: The spread strucutures (should be computed as a function of the credit quality of the firm)
